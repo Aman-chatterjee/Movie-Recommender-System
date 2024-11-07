@@ -1,10 +1,7 @@
 import streamlit as st
 import pickle
 import requests
-import os
 
-
-api_key = os.getenv("TMDB_API_KEY")
 
 movies = pickle.load(open('movies.pkl', 'rb'))
 movies_list = movies['title'].values
@@ -36,7 +33,7 @@ def recommend(movie):
     return recommended_movies
 
 def fetch_poster(movie_id):
-  
+    api_key = '13b83a957da604c5efcf3cbd651a0098'
     url = 'https://api.themoviedb.org/3/movie/{}?api_key={}&language=en-US'.format(movie_id, api_key)
     response = requests.get(url)
     data = response.json()
