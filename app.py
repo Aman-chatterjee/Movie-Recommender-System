@@ -1,21 +1,15 @@
 import streamlit as st
 import pickle
 import requests
-from dotenv import load_dotenv
 import os
 
 
-# Load environment variables
-load_dotenv()
 api_key = os.getenv("TMDB_API_KEY")
 
 movies = pickle.load(open('movies.pkl', 'rb'))
 movies_list = movies['title'].values
 
 similarity = pickle.load(open('similarity.pkl', 'rb'))
-
-
-
 
 
 st.title("Movie Recommender system")
