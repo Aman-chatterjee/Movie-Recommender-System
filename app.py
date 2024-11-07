@@ -8,9 +8,9 @@ movies_list = movies['title'].values
 
 similarity = pickle.load(open('similarity.pkl', 'rb'))
 
+api_key = st.secrets['TMDB_API_KEY']
 
 st.title("Movie Recommender system")
-
 selected_movie = st.selectbox(
     'Please select a movie from the list: ', 
     (movies_list)
@@ -33,7 +33,6 @@ def recommend(movie):
     return recommended_movies
 
 def fetch_poster(movie_id):
-    api_key = '13b83a957da604c5efcf3cbd651a0098'
     url = 'https://api.themoviedb.org/3/movie/{}?api_key={}&language=en-US'.format(movie_id, api_key)
     response = requests.get(url)
     data = response.json()
