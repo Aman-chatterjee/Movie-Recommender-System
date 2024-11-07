@@ -1,6 +1,0 @@
-[theme]
-primaryColor = "#FF4B4B"                # Bright coral red to make primary elements stand out
-backgroundColor = "#1E1E2C"             # Dark slate for a sleek, professional background
-secondaryBackgroundColor = "#2C2C3A"    # Slightly lighter dark background for contrast
-textColor = "#E5E5E5"                   # Light gray for readability against the dark background
-font = "sans-serif"                     # Sans-serif for a clean, modern feel
